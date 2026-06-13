@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroTech - O Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-accessibility">
+        <button class="btn-access" onclick="alterarFonte('diminuir')" title="Diminuir Fonte">A-</button>
+        <button class="btn-access" onclick="alterarFonte('aumentar')" title="Aumentar Fonte">A+</button>
+        <button class="btn-access" id="btn-leitura" onclick="alternarLeitura()">🗣️ Ler Tela</button>
+    </div>
+
+    <nav class="sidebar">
+        <div class="logo">🌾</div>
+        <ul class="nav-links">
+            <li class="active" onclick="mudarPagina('home', this)"><span class="emoji-icon">🏠</span></li>
+            <li onclick="mudarPagina('agro', this)"><span class="emoji-icon">🚜</span></li>
+            <li onclick="mudarPagina('tech', this)"><span class="emoji-icon">💻</span></li>
+            <li onclick="mudarPagina('simulador', this)"><span class="emoji-icon">🎮</span></li>
+            <li onclick="mudarPagina('sobre', this)"><span class="emoji-icon">ℹ️</span></li>
+        </ul>
+        <div class="theme-toggle" id="theme-icon" onclick="mudarTema()">☀️</div>
+    </nav>
+
+    <main class="main-content">
+        
+        <section id="home" class="page active fundo-home">
+            <div class="canva-glass-card">
+                <h1 class="canva-title">Bem-vindos ao AgroTech</h1>
+                <div class="split-layout">
+                    <div class="scroll-content">
+                        <p><strong>Olá, avaliadores!</strong> Este portal foi desenvolvido para apresentar uma visão crítica, interativa e tecnológica sobre o agronegócio e a sustentabilidade.</p>
+                        <p>Nas próximas seções, vocês encontrarão um pouco de minha pesquisa dividida da seguinte forma:</p>
+                        <ul>
+                            <li><strong>🚜 O Agronegócio:</strong> Uma análise profunda sobre o Paradoxo da Eficiência, a exclusão digital e a pegada ecológica invisível.</li>
+                            <li><strong>💻 Tecnologia:</strong> Como a robótica, os drones e a IA estão otimizando o campo e os desafios que isso traz.</li>
+                            <li><strong>🎮 Eco-Memória:</strong> Um simulador interativo para testar os conceitos apresentados.</li>
+                            <li><strong>ℹ️ Sobre:</strong> O meu Veredito do agro 4.0.</li>
+                        </ul>
+                        <p>Por favor, utilizem o menu lateral para iniciar a navegação e explorem as ferramentas de acessibilidade no topo da tela.</p>
+                    </div>
+                    <div class="image-gallery">
+                        <img class="side-img" src="https://images.pexels.com/photos/15517138/pexels-photo-15517138.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Homem carregando colheitas">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="agro" class="page fundo-agro">
+            <div class="canva-glass-card">
+                <h1 class="canva-title">O Campo Agora é Digital</h1>
+                <div class="split-layout">
+                    <div class="scroll-content">
+                        <p>A modernização do setor agrícola transformou o campo em um ecossistema altamente tecnológico. O uso de drones para mapeamento detalhado de lavouras, sensores de umidade conectados no solo e sistemas de inteligência artificial (IA) para o controle preditivo de pragas revolucionou a gestão rural. Essas ferramentas permitem a chamada agricultura de precisão, onde os agricultores aplicam defensivos químicos e água apenas onde é estritamente necessário. O resultado é impressionante: uma redução de até 80% no impacto ambiental em comparação aos métodos tradicionais de aplicação massiva.</p>
+                        <p>No entanto, quando analisamos o tema "Agro forte, futuro sustentável", essa revolução digital também abre espaço para debates profundos e contradições importantes:</p>
+                        <p><strong>O Paradoxo da Eficiência (Efeito Jevons):</strong> Embora a tecnologia reduza o uso de recursos por hectare em até 80%, a economia gerada e o aumento da lucratividade podem incentive os produtores a expandir suas áreas de cultivo. Se não houver uma regulamentação firme, a eficiência tecnológica que deveria poupar o meio ambiente pode acabar estimulando o avanço sobre novas áreas nativas.</p>
+                        <p><strong>A Exclusão Digital no Campo:</strong> O acesso a drones, IA e sensores exige um alto investimento inicial e conectividade de ponta (como o 5G rural). Isso cria um abismo entre o grande agronegócio exportador — que se torna ultraeficiente e sustentável — e o pequeno agricultor familiar, que produz a maior parte dos alimentos que vão para a mesa da população, mas não tem capital para aderir à transformação digital.</p>
+                        <p><strong>A Pegada Ecológica Invisível:</strong> A tecnologia limpa o campo, mas transfere o impacto ambiental para as indústrias. A fabricação de sensores e baterias para drones depende da mineração de terras raras, e o processamento de dados por IA consome quantidades massivas de energia em data centers.</p>
+                    </div>
+                    <div class="image-gallery">
+                       <img class="side-img" src="https://images.pexels.com/photos/35574296/pexels-photo-35574296.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Trator verde no campo">
+                </div>
+            </div>
+        </section>
+
+        <section id="tech" class="page fundo-tech">
+            <div class="canva-glass-card">
+                <h1 class="canva-title">Tecnologia e Robótica</h1>
+                <div class="split-layout">
+                    <div class="scroll-content">
+                        <p>O campo agora é digital, e a modernização do agronegócio introduziu uma nova camada de inteligência e precisão à produção rural. O uso de drones para o mapeamento multiespectral de lavouras, sensores de umidade conectados à Internet das Coisas (IoT) no solo e sistemas de inteligência artificial aplicados ao controle preditivo de pragas revolucionaram o manejo diário. Essas inovações permitem que os agricultores intervenham na plantação de forma cirúrgica, aplicando defensivos agrícolas e recursos hídricos apenas onde e quando é estritamente necessário. O impacto ambiental dessa abordagem é contundente, reduzindo o desperdício e a aplicação desnecessária de insumos químicos em até 80%.</p>
+                        <p>No entanto, longe de anular os fundamentos da agricultura tradicional, a tecnologia e a robótica expõem suas próprias contradições e dilemas estruturais. A automação não substitui a necessidade de um solo saudável ou de rotação de culturas; em vez disso, ela otimiza a eficiência com que gerenciamos esses recursos, mas traz consigo uma pegada invisível. O primeiro grande paradoxo é o da eficiência econômica: ao reduzir os custos de produção e aumentar expressivamente as margens de lucro por hectare, a tecnologia de ponta pode incentivar os produtores a expandir suas áreas cultivadas, gerando um efeito rebote que pressiona ecossistemas nativos caso não existam leis de conservação rigorosas.</p>
+                        <p>Outro ponto crítico é o abismo socioeconômico gerado pela exclusão digital. A implementação de frotas de tratores autônomos, sensores avançados e softwares de inteligência artificial demanda um investimento de capital massivo e conectividade robusta, infraestrutura que está completamente fora da realidade da agricultura familiar. Desse modo, o avanço tecnológico corre o risco de concentrar as certificações de sustentabilidade e os mercados de exportação mais lucrativos nas mãos de megaprojetos agropecuários, sufocando as comunidades agrícolas locais que produzem a maior parte dos alimentos consumidos domesticamente.</p>
+                        <p>Ademais, a transição para o agro digital desloca parte do impacto ambiental do campo para as zonas industriais. A fabricação em escala de drones, chips, baterias e servidores necessários para processar dados agrícolas consome minerais raros, gera resíduos eletrônicos complexos e demanda grandes volumes de energia elétrica em data centers. Fica evidente, portanto, que a robótica e a tecnologia não são soluções mágicas e autossuficientes. Elas são ferramentas indispensáveis que dependem diretamente das práticas conservacionistas do solo e do equilíbrio natural para funcionar, demonstrando que o futuro sustentável reside na fusão inteligente entre a sabedoria biológica da terra e a precisão exata da máquina.</p>
+                    </div>
+                    <div class="image-gallery">
+                        <img class="side-img" src="https://images.pexels.com/photos/34182385/pexels-photo-34182385.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pulverização avançada com drones">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulador" class="page fundo-simulador">
+            <div class="canva-glass-card">
+                <h1 class="canva-title">Eco-Memória</h1>
+                <div class="split-layout">
+                    <div class="scroll-content">
+                        <p><strong>Teste seus conhecimentos práticos!</strong></p>
+                        <p>O conceito de sustentabilidade no agronegócio não existe apenas na teoria; ele depende da conexão entre os elements reais do campo. O objetivo deste simulador é exercitar a memória enquanto você forma pares que representam os pilares do "Agro 4.0" e da preservação.</p>
+                        <ul>
+                            <li>🚜 <strong>Tratores:</strong> Representam a precisão e a eficiência.</li>
+                            <li>🌱 <strong>Mudas:</strong> O renascimento do solo e a recuperação de pastagens.</li>
+                            <li>💧 <strong>Água:</strong> O uso consciente dos recursos hídricos.</li>
+                            <li>📱 <strong>Smartphones:</strong> A conectividade e a inclusão digital no campo.</li>
+                            <li>☀️ <strong>Energia Solar:</strong> Transição para matrizes energéticas limpas.</li>
+                            <li>🌍 <strong>Planeta:</strong> O impacto global das nossas ações locais.</li>
+                            <li>🚁 <strong>Drones:</strong> Monitoramento aéreo e redução de defensivos.</li>
+                            <li>🌳 <strong>Florestas:</strong> Preservação do Cerrado, Amazônia e o sistema ILPF.</li>
+                        </ul>
+                        <p>Encontre os 8 pares no menor número de tentativas possível e prove seu comprometimento com o futuro do ecossistema!</p>
+                    </div>
+                    
+                    <div class="jogo-memoria-container" style="margin: auto;">
+                        <div class="status-jogo">
+                            <div>Tentativas: <span id="tentativas">0</span></div>
+                            <button class="btn-jogo" onclick="iniciarJogoMemoria()">Reiniciar</button>
+                        </div>
+                        <div class="memory-board" id="memory-board"></div>
+                        <div class="mensagem-vitoria" id="mensagem-vitoria"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="page fundo-sobre">
+            <div class="canva-glass-card">
+                <h1 class="canva-title">Conclusão e Crítica</h1>
+                <div class="split-layout">
+                    <div class="scroll-content">
+                        <p><strong>Criador:</strong> Isaac Bihr Proença</p>
+                        <hr class="divisor">
+                        <p><strong>Opinião do autor sobre a sustentabilidade do agro:</strong></p>
+                        <p>Ainda há pessoas que defendem, por pura miopia de mercado, que o progresso do agronegócio exige o sacrifício da biosfera. Esse retrocesso ignora a maior revolução econômica do século: a ascensão global dos critérios ESG (Ambiental, Social e Governança). Conforme evidenciado na literatura, o sucesso financeiro na atualidade é inseparável da responsabilidade ecológica. Para o Brasil, consolidado como potência agropecuária, o desafio não é expandir fronteiras agrícolas por meio do desmatamento, mas sim compreender que a sustentabilidade se tornou o ativo mais lucrativo e obrigatório para a sobrevivência do setor.</p>
+                        <p>O motor dessa virada é a tecnologia do "Agro 4.0". Sob essa ótica, o modelo explorador perdeu o sentido econômico. Práticas como a Integração Lavoura-Pecuária-Floresta (ILPF) e a agricultura de precisão comprovam ser perfeitamente viável duplicar a produção a partir da recuperação de pastagens já degradadas. Essa eficiência cumpre o pilar ambiental do ESG, poupando o Cerrado e a Amazônia ao mesmo tempo, em que blinda as exportações nacionais contra o boicote de mercados internacionais exigentes.</p>
+                        <p>Por outro lado, o pilar da governança exige o fim da tolerância com a ilegalidade. Embora o Código Florestal seja robusto, a fiscalização omissa protege o infrator e pune o produtor correto, cuja reputação acaba manchada pelo crime alheio. É preciso, portanto, reverter essa lógica invertida: sufocar o desmatamento ilegal e, simultaneamente, bonificar quem preserva via Pagamento por Serviços Ambientais (PSA).</p>
+                        <p>Torna-se imperativo, logo, que o Ministério da Agricultura restrinja recursos do Plano Safra para quem descumpre as leis, condicionando o crédito à regularização no CAR (Cadastro Ambiental Rural) — ferramenta que monitora as propriedades. Em contrapartida, produtores alinhados às diretrizes socioambientais devem receber juros reduzidos e o suporte tecnológico da Embrapa. Só o estímulo ético e econômico garantirá o futuro do campo e o respeito às próximas gerações.</p>
+                        <p style="text-align: right; font-style: italic; margin-top: 30px; padding-right: 10px;">- Atenciosamente, Isaac Bihr Proença.</p>
+                    </div>
+                    <div class="image-gallery">
+                       <img class="side-img" src="https://images.pexels.com/photos/24380573/pexels-photo-24380573.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Céu, nuvens e campo aberto">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+
+    <script src="script.js"></script>
+</body>
+</html>
